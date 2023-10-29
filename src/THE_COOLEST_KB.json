@@ -1,0 +1,524 @@
+{
+  "contentType": "application/vnd.gorules.decision",
+  "edges": [
+    {
+      "id": "d84d5d5a-8a23-4fb0-befb-c0a9efbcf210",
+      "sourceId": "f0be44e5-eaf3-4ee3-922b-08785393ef56",
+      "type": "edge",
+      "targetId": "c8abbd11-2af2-4e5a-b518-28fbb0dc99ee"
+    },
+    {
+      "id": "6f94f192-831c-4f5d-a472-209cc13c68b4",
+      "sourceId": "f0be44e5-eaf3-4ee3-922b-08785393ef56",
+      "type": "edge",
+      "targetId": "39b86d81-4180-4531-8808-c04b2c4518b0"
+    },
+    {
+      "id": "f12447f7-aa28-4654-9521-d79bdc4b4835",
+      "sourceId": "f0be44e5-eaf3-4ee3-922b-08785393ef56",
+      "type": "edge",
+      "targetId": "ecd611c8-8d2f-4d4e-98fd-2e09049a1caa"
+    },
+    {
+      "id": "cd1d8370-6d34-4638-9c44-82f1512d5716",
+      "sourceId": "f0be44e5-eaf3-4ee3-922b-08785393ef56",
+      "type": "edge",
+      "targetId": "43a9bb78-b225-4bb3-a2f2-571d6ba25e14"
+    },
+    {
+      "id": "44b6c977-49f9-465c-8226-46c531b6d080",
+      "sourceId": "f0be44e5-eaf3-4ee3-922b-08785393ef56",
+      "type": "edge",
+      "targetId": "2db036fb-5c45-41c8-b982-6fed26c060c7"
+    },
+    {
+      "id": "cb101207-c456-4ee1-9289-56126a7aff66",
+      "sourceId": "2db036fb-5c45-41c8-b982-6fed26c060c7",
+      "type": "edge",
+      "targetId": "c0fa012f-13c8-420f-a80c-9e578216a504"
+    },
+    {
+      "id": "0d9603e7-9f6b-4365-be1c-600e87eb879d",
+      "sourceId": "c8abbd11-2af2-4e5a-b518-28fbb0dc99ee",
+      "type": "edge",
+      "targetId": "c0fa012f-13c8-420f-a80c-9e578216a504"
+    },
+    {
+      "id": "d2ef63d4-d536-418f-8c80-87267593cecd",
+      "sourceId": "43a9bb78-b225-4bb3-a2f2-571d6ba25e14",
+      "type": "edge",
+      "targetId": "c0fa012f-13c8-420f-a80c-9e578216a504"
+    },
+    {
+      "id": "e75ea881-334b-4771-8ff2-e7b2f1949378",
+      "sourceId": "2db036fb-5c45-41c8-b982-6fed26c060c7",
+      "type": "edge",
+      "targetId": "571ac239-3aa0-41da-a710-fd59b26fccb6"
+    },
+    {
+      "id": "ee01dea3-824b-4ec5-bff1-1e137b9dbb24",
+      "sourceId": "c0fa012f-13c8-420f-a80c-9e578216a504",
+      "type": "edge",
+      "targetId": "b390bbe2-038b-4197-b353-17419888c935"
+    },
+    {
+      "id": "358c3286-000c-4f44-9940-e9cbe3184ac8",
+      "sourceId": "ecd611c8-8d2f-4d4e-98fd-2e09049a1caa",
+      "type": "edge",
+      "targetId": "b390bbe2-038b-4197-b353-17419888c935"
+    },
+    {
+      "id": "241bfad3-18f5-4479-9962-436600002ae1",
+      "sourceId": "39b86d81-4180-4531-8808-c04b2c4518b0",
+      "type": "edge",
+      "targetId": "b390bbe2-038b-4197-b353-17419888c935"
+    },
+    {
+      "id": "c049156d-ba3e-4445-9172-a8f0eb5a7473",
+      "sourceId": "b390bbe2-038b-4197-b353-17419888c935",
+      "type": "edge",
+      "targetId": "571ac239-3aa0-41da-a710-fd59b26fccb6"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "f0be44e5-eaf3-4ee3-922b-08785393ef56",
+      "type": "inputNode",
+      "position": {
+        "x": -560,
+        "y": 560
+      },
+      "name": "Request"
+    },
+    {
+      "id": "c8abbd11-2af2-4e5a-b518-28fbb0dc99ee",
+      "type": "decisionTableNode",
+      "position": {
+        "x": -330,
+        "y": 660
+      },
+      "name": "Turnover Based Decision",
+      "content": {
+        "hitPolicy": "first",
+        "inputs": [
+          {
+            "field": "turnover",
+            "id": "KuL63ENpWK",
+            "name": "Turnover",
+            "type": "expression"
+          }
+        ],
+        "outputs": [
+          {
+            "field": "turnover_trust_level",
+            "id": "aa7HS0vyiI",
+            "name": "Output",
+            "type": "expression"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "K2LyQlUAGf",
+            "KuL63ENpWK": "> 100_000_000",
+            "aa7HS0vyiI": "\"High\""
+          },
+          {
+            "_id": "IYJnMDBx3U",
+            "KuL63ENpWK": "[1_000_000..100_000_000]",
+            "aa7HS0vyiI": "\"Medium\""
+          },
+          {
+            "_id": "guLywPkpkw",
+            "KuL63ENpWK": "< 1_000_000",
+            "aa7HS0vyiI": "\"Low\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "39b86d81-4180-4531-8808-c04b2c4518b0",
+      "type": "decisionTableNode",
+      "position": {
+        "x": -330,
+        "y": 360
+      },
+      "name": "Type Based Decision",
+      "content": {
+        "hitPolicy": "first",
+        "inputs": [
+          {
+            "id": "gFoJB1C4JA",
+            "type": "expression",
+            "field": "company_type",
+            "name": "Company Type"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "3OtaHGXFwN",
+            "type": "expression",
+            "field": "type_trust_level",
+            "name": "Trust Level"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "2msy8K9_wE",
+            "gFoJB1C4JA": "\"LTD\"",
+            "3OtaHGXFwN": "\"High\""
+          },
+          {
+            "_id": "Wn5TEwcrRo",
+            "gFoJB1C4JA": "\"PLC\"",
+            "3OtaHGXFwN": "\"Medium\""
+          },
+          {
+            "_id": "Apz_EEl8ej",
+            "gFoJB1C4JA": "\"PL\"",
+            "3OtaHGXFwN": "\"Medium\""
+          },
+          {
+            "_id": "3tge9b4S5b",
+            "gFoJB1C4JA": "\"GP\"",
+            "3OtaHGXFwN": "\"Medium\""
+          },
+          {
+            "_id": "lDinJ6WkgP",
+            "gFoJB1C4JA": "\"SOE\"",
+            "3OtaHGXFwN": "\"Low\""
+          },
+          {
+            "_id": "ia2gm-siOB",
+            "gFoJB1C4JA": "\"HC\"",
+            "3OtaHGXFwN": "\"Medium\""
+          },
+          {
+            "_id": "ScVgHdX6cA",
+            "gFoJB1C4JA": "\"CIO\"",
+            "3OtaHGXFwN": "\"Low\""
+          },
+          {
+            "_id": "ZavLKYYpZy",
+            "gFoJB1C4JA": "\"LLC\"",
+            "3OtaHGXFwN": "\"High\""
+          },
+          {
+            "_id": "yzlYKMED2z",
+            "gFoJB1C4JA": "\"INC\"",
+            "3OtaHGXFwN": "\"High\""
+          },
+          {
+            "_id": "ZdXJ57Ed_m",
+            "gFoJB1C4JA": "",
+            "3OtaHGXFwN": "\"Low\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "ecd611c8-8d2f-4d4e-98fd-2e09049a1caa",
+      "type": "decisionTableNode",
+      "position": {
+        "x": -330,
+        "y": 460
+      },
+      "name": "Country Based Decision",
+      "content": {
+        "hitPolicy": "first",
+        "inputs": [
+          {
+            "field": "country",
+            "id": "Y1Dx72iE45",
+            "name": "Input",
+            "type": "expression"
+          }
+        ],
+        "outputs": [
+          {
+            "field": "country_trust_level",
+            "id": "HhFXL08WGr",
+            "name": "Output",
+            "type": "expression"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "0MbmbRT8se",
+            "Y1Dx72iE45": "\"UA\", \"UK\", \"US\", \"GE\", \"FR\"",
+            "HhFXL08WGr": "\"High\""
+          },
+          {
+            "_id": "XRgY3QKm_y",
+            "Y1Dx72iE45": "\"SL\", \"BR\", \"PL\", \"LA\", \"CHK\", \"SP\", \"JP\"",
+            "HhFXL08WGr": "\"Medium\""
+          },
+          {
+            "_id": "Y3ZG_hzgx9",
+            "Y1Dx72iE45": "",
+            "HhFXL08WGr": "\"Low\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "43a9bb78-b225-4bb3-a2f2-571d6ba25e14",
+      "type": "decisionTableNode",
+      "position": {
+        "x": -330,
+        "y": 760
+      },
+      "name": "CreditDebt Based Decision",
+      "content": {
+        "hitPolicy": "first",
+        "inputs": [
+          {
+            "field": "debt",
+            "id": "As359cqdFp",
+            "name": "Debt",
+            "type": "expression"
+          }
+        ],
+        "outputs": [
+          {
+            "field": "creditdebt_trust_level",
+            "id": "Z7FC3xGOWA",
+            "name": "Output",
+            "type": "expression"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "-lYduXsJJn",
+            "As359cqdFp": "< 10_000",
+            "Z7FC3xGOWA": "\"High\""
+          },
+          {
+            "_id": "uOUEANgwKm",
+            "As359cqdFp": "[10_00..50_000]",
+            "Z7FC3xGOWA": "\"Medium\""
+          },
+          {
+            "_id": "45acmTKelq",
+            "As359cqdFp": "> 50_000",
+            "Z7FC3xGOWA": "\"Low\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "2db036fb-5c45-41c8-b982-6fed26c060c7",
+      "type": "functionNode",
+      "position": {
+        "x": -330,
+        "y": 560
+      },
+      "name": "Profit Calculator",
+      "content": "/**\n* @param {import('gorules').Input} input\n* @param {{\n*  moment: import('dayjs')\n*  env: Record<string, any>\n* }} helpers\n*/\nconst handler = (input, { moment, env }) => {\n  const { credit, percent, bilresp } = input;\n\n  console.log(input);\n  console.log(credit);\n  console.log(percent);\n  console.log(bilresp);\n\n  const _profit = credit * percent / 100 * bilresp\n  console.log(_profit);\n\n  return {\n    profit: _profit\n  };\n}"
+    },
+    {
+      "id": "c0fa012f-13c8-420f-a80c-9e578216a504",
+      "type": "decisionTableNode",
+      "position": {
+        "x": -100,
+        "y": 660
+      },
+      "name": "Overall Money Based Decision",
+      "content": {
+        "hitPolicy": "first",
+        "inputs": [
+          {
+            "field": "profit",
+            "id": "J9trj74Fo8",
+            "name": "Profit",
+            "type": "expression"
+          },
+          {
+            "id": "aqbT10rkyh",
+            "type": "expression",
+            "field": "turnover_trust_level",
+            "name": "Turnover"
+          },
+          {
+            "id": "mXhHcys7U9",
+            "type": "expression",
+            "field": "creditdebt_trust_level",
+            "name": "CreditDebt"
+          }
+        ],
+        "outputs": [
+          {
+            "field": "money_trust_level",
+            "id": "Fz01qi_TBQ",
+            "name": "Output",
+            "type": "expression"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "VZ08Fv3Yrq",
+            "J9trj74Fo8": "",
+            "aqbT10rkyh": "\"High\"",
+            "mXhHcys7U9": "\"High\"",
+            "Fz01qi_TBQ": "\"High\""
+          },
+          {
+            "_id": "urG5SPmGEv",
+            "J9trj74Fo8": ">500_000",
+            "aqbT10rkyh": "\"Medium\"",
+            "mXhHcys7U9": "\"High\"",
+            "Fz01qi_TBQ": "\"High\""
+          },
+          {
+            "_id": "GfZ3bW2465",
+            "J9trj74Fo8": ">100_000",
+            "aqbT10rkyh": "\"Medium\"",
+            "mXhHcys7U9": "\"High\"",
+            "Fz01qi_TBQ": "\"Medium\""
+          },
+          {
+            "_id": "O_5p-tGsI4",
+            "J9trj74Fo8": ">300_000",
+            "aqbT10rkyh": "\"Low\"",
+            "mXhHcys7U9": "\"High\"",
+            "Fz01qi_TBQ": "\"Medium\""
+          },
+          {
+            "_id": "ueeENzqaEP",
+            "J9trj74Fo8": ">300_000",
+            "aqbT10rkyh": "\"High\"",
+            "mXhHcys7U9": "\"Medium\"",
+            "Fz01qi_TBQ": "\"High\""
+          },
+          {
+            "_id": "rgUyVwQLIH",
+            "J9trj74Fo8": "",
+            "aqbT10rkyh": "\"High\"",
+            "mXhHcys7U9": "\"Medium\"",
+            "Fz01qi_TBQ": "\"Medium\""
+          },
+          {
+            "_id": "z0qj45rS6-",
+            "J9trj74Fo8": ">400_000",
+            "aqbT10rkyh": "\"Medium\"",
+            "mXhHcys7U9": "\"Medium\"",
+            "Fz01qi_TBQ": "\"Medium\""
+          },
+          {
+            "_id": "K1TqRnKr1c",
+            "J9trj74Fo8": ">600_000",
+            "aqbT10rkyh": "\"Low\"",
+            "mXhHcys7U9": "\"Medium\"",
+            "Fz01qi_TBQ": "\"Medium\""
+          },
+          {
+            "_id": "hh2y3b_IfU",
+            "J9trj74Fo8": "",
+            "aqbT10rkyh": "",
+            "mXhHcys7U9": "",
+            "Fz01qi_TBQ": "\"Low\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "b390bbe2-038b-4197-b353-17419888c935",
+      "type": "decisionTableNode",
+      "position": {
+        "x": 130,
+        "y": 460
+      },
+      "name": "Overall Decision",
+      "content": {
+        "hitPolicy": "first",
+        "inputs": [
+          {
+            "id": "EPsVSgX-B0",
+            "type": "expression",
+            "field": "money_trust_level",
+            "name": "Money"
+          },
+          {
+            "id": "wL-Nla3JB1",
+            "type": "expression",
+            "field": "country_trust_level",
+            "name": "Country"
+          },
+          {
+            "id": "dHTi2Y0YAM",
+            "type": "expression",
+            "field": "type_trust_level",
+            "name": "Type"
+          }
+        ],
+        "outputs": [
+          {
+            "field": "verdict",
+            "id": "KiZzgaa8O-",
+            "name": "Verdict",
+            "type": "expression"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "RtaV0uFlUT",
+            "EPsVSgX-B0": "\"Low\"",
+            "wL-Nla3JB1": "",
+            "dHTi2Y0YAM": "",
+            "KiZzgaa8O-": "\"Low\""
+          },
+          {
+            "_id": "8_MxX0VHrY",
+            "EPsVSgX-B0": "",
+            "wL-Nla3JB1": "\"Low\"",
+            "dHTi2Y0YAM": "",
+            "KiZzgaa8O-": "\"Low\""
+          },
+          {
+            "_id": "imL0NQ8_ej",
+            "EPsVSgX-B0": "",
+            "wL-Nla3JB1": "",
+            "dHTi2Y0YAM": "\"Low\"",
+            "KiZzgaa8O-": "\"Low\""
+          },
+          {
+            "_id": "5qokLPFd8Y",
+            "EPsVSgX-B0": "\"Medium\"",
+            "wL-Nla3JB1": "\"Medium\"",
+            "dHTi2Y0YAM": "",
+            "KiZzgaa8O-": "\"Medium\""
+          },
+          {
+            "_id": "kr51XdE_Lx",
+            "EPsVSgX-B0": "",
+            "wL-Nla3JB1": "\"Medium\"",
+            "dHTi2Y0YAM": "\"Medium\"",
+            "KiZzgaa8O-": "\"Medium\""
+          },
+          {
+            "_id": "BB7QlfwzR8",
+            "EPsVSgX-B0": "\"Medium\"",
+            "wL-Nla3JB1": "",
+            "dHTi2Y0YAM": "\"Medium\"",
+            "KiZzgaa8O-": "\"Medium\""
+          },
+          {
+            "_id": "mXGKmAh7tc",
+            "EPsVSgX-B0": "",
+            "wL-Nla3JB1": "",
+            "dHTi2Y0YAM": "",
+            "KiZzgaa8O-": "\"High\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "571ac239-3aa0-41da-a710-fd59b26fccb6",
+      "type": "outputNode",
+      "position": {
+        "x": 360,
+        "y": 560
+      },
+      "name": "Response"
+    }
+  ]
+}
